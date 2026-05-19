@@ -1,0 +1,25 @@
+@{
+    ViewData["Title"] = "Emergency Bail";
+}
+
+<section class="page-title urgent">
+    <p class="eyebrow">Urgent criminal law support</p>
+    <h1>Emergency Bail Assistance</h1>
+    <p>Capture the key facts quickly so the firm can assign an attorney, contact the police station, and call the family back.</p>
+    <div class="actions">
+        <a class="button alert" href="tel:+27000000000">Call Now</a>
+        <a class="button secondary" href="https://wa.me/27000000000">WhatsApp</a>
+    </div>
+</section>
+
+<section class="form-section">
+    <form class="intake-form">
+        <label>Accused name<input name="accusedName" required /></label>
+        <label>Police station<input name="policeStation" required /></label>
+        <label>Case number<input name="caseNumber" /></label>
+        <label>Offence<input name="offence" /></label>
+        <label>Family contact<input name="familyContact" required /></label>
+        <label>Urgency<select name="urgency"><option>Immediate</option><option>Today</option><option>This week</option></select></label>
+        <button class="button primary" type="submit">Submit Emergency Intake</button>
+    </form>
+</section>

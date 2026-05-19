@@ -1,0 +1,64 @@
+@model FirmContentService
+@{
+    ViewData["Title"] = "Client Portal";
+}
+
+<section class="page-title compact">
+    <p class="eyebrow">Lite client portal</p>
+    <h1>Client dashboard</h1>
+    <p>Prototype view for matter status, uploads, secure messaging, invoices, and appointment visibility.</p>
+</section>
+
+<section class="metric-grid">
+    @foreach (var metric in Model.PortalMetrics)
+    {
+        <article class="metric">
+            <span>@metric.Label</span>
+            <strong>@metric.Value</strong>
+            <p>@metric.Detail</p>
+        </article>
+    }
+</section>
+
+<section class="portal-grid">
+    <article class="portal-panel">
+        <h2>Matters</h2>
+        @foreach (var matter in Model.Matters)
+        {
+            <div class="matter-row">
+                <strong>@matter.Reference</strong>
+                <span>@matter.Title</span>
+                <small>@matter.Status - @matter.Attorney</small>
+                <p>@matter.NextAction</p>
+            </div>
+        }
+    </article>
+    <article class="portal-panel">
+        <h2>Upload document</h2>
+        <form class="stacked-form">
+            <label>Matter reference<input /></label>
+            <label>Document category<select><option>ID</option><option>Medical report</option><option>Lease agreement</option><option>Court document</option></select></label>
+            <label>File<input type="file" /></label>
+            <button class="button primary" type="submit">Upload Securely</button>
+        </form>
+    </article>
+    <article class="portal-panel">
+        <h2>Invoices</h2>
+        @foreach (var invoice in Model.Invoices)
+        {
+            <div class="matter-row">
+                <strong>@invoice.Number</strong>
+                <span>@invoice.Amount</span>
+                <small>@invoice.Status - due @invoice.DueDate</small>
+            </div>
+        }
+    </article>
+    <article class="portal-panel">
+        <h2>Secure message</h2>
+        <form class="stacked-form">
+            <label>Subject<input /></label>
+            <label>Message<textarea rows="5"></textarea></label>
+            <button class="button secondary" type="submit">Send Message</button>
+        </form>
+    </article>
+</section>

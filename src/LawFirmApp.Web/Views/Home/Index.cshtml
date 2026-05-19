@@ -1,0 +1,47 @@
+@model IReadOnlyList<ServicePage>
+@{
+    ViewData["Title"] = "Experienced Legal Representation";
+}
+
+<section class="hero">
+    <div class="hero-content">
+        <p class="eyebrow">Website, client portal, and legal workflow platform</p>
+        <h1>Experienced Legal Representation You Can Trust.</h1>
+        <p class="hero-copy">A professional digital front office for urgent legal help, consultation booking, secure document exchange, matter tracking, invoices, and client communication.</p>
+        <div class="actions">
+            <a class="button primary" asp-action="Booking">Book Consultation</a>
+            <a class="button secondary" asp-action="Services">Request Legal Help</a>
+            <a class="button alert" asp-action="EmergencyBail">Emergency Bail Assistance</a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-heading">
+        <p class="eyebrow">Practice areas</p>
+        <h2>Clickable service catalogue for first release</h2>
+    </div>
+    <div class="service-grid">
+        @foreach (var service in Model)
+        {
+            <a class="service-card" asp-action="Service" asp-route-id="@service.Slug">
+                <span>@service.Name</span>
+                <p>@service.Summary</p>
+            </a>
+        }
+    </div>
+</section>
+
+<section class="band">
+    <div>
+        <p class="eyebrow">Lite client portal</p>
+        <h2>Reduce repeated calls with clear matter visibility.</h2>
+    </div>
+    <div class="feature-list">
+        <span>Matter status</span>
+        <span>Secure uploads</span>
+        <span>Invoices</span>
+        <span>Messages</span>
+        <span>Appointments</span>
+    </div>
+</section>

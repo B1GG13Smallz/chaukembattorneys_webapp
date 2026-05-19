@@ -1,0 +1,37 @@
+@model ServicePage
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<section class="page-title compact">
+    <p class="eyebrow">Practice area</p>
+    <h1>@Model.Name</h1>
+    <p>@Model.Summary</p>
+    <div class="actions">
+        <a class="button primary" asp-action="Booking">Book Consultation</a>
+        <a class="button secondary" asp-action="Contact">Request Legal Help</a>
+    </div>
+</section>
+
+<section class="two-column">
+    <article>
+        <h2>How the firm helps</h2>
+        <p>@Model.Process</p>
+        <h3>Focus areas</h3>
+        <div class="tag-list">
+            @foreach (var item in Model.Highlights)
+            {
+                <span>@item</span>
+            }
+        </div>
+    </article>
+    <aside class="panel">
+        <h2>Common documents</h2>
+        <ul class="check-list">
+            @foreach (var document in Model.Documents)
+            {
+                <li>@document</li>
+            }
+        </ul>
+    </aside>
+</section>

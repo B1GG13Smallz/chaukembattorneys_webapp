@@ -1,0 +1,32 @@
+@model IReadOnlyList<ServicePage>
+@{
+    ViewData["Title"] = "Book Consultation";
+}
+
+<section class="page-title">
+    <p class="eyebrow">Consultation booking</p>
+    <h1>Book a consultation</h1>
+    <p>Select a service, consultation mode, appointment preference, and consent to process personal information.</p>
+</section>
+
+<section class="form-section">
+    <form class="intake-form">
+        <label>
+            Service type
+            <select name="serviceType" required>
+                @foreach (var service in Model)
+                {
+                    <option>@service.Name</option>
+                }
+            </select>
+        </label>
+        <label>Full name<input name="clientName" required /></label>
+        <label>Email<input name="email" type="email" required /></label>
+        <label>Phone<input name="phone" required /></label>
+        <label>Consultation mode<select name="mode"><option>In person</option><option>Online</option></select></label>
+        <label>Preferred date<input name="preferredDate" type="date" /></label>
+        <label class="wide">Matter summary<textarea name="matterSummary" rows="5"></textarea></label>
+        <label class="consent wide"><input name="popiaConsent" type="checkbox" required /> I consent to the firm processing my personal information for this enquiry.</label>
+        <button class="button primary" type="submit">Request Booking</button>
+    </form>
+</section>

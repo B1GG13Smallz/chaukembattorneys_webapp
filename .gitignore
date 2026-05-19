@@ -1,0 +1,14 @@
+bin/
+obj/
+.vs/
+.vscode/
+.idea/
+.codex-run/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+TestResults/
+coverage/
+*.nupkg
+*.snupkg

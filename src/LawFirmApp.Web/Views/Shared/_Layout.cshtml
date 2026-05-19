@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chauke MB Attorneys Inc</title>
+    <link rel="icon" type="image/jpeg" href="~/images/logo.jpg" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" asp-controller="Home" asp-action="Index">
+            <span class="brand-mark">CM</span>
+            <span>Home</span>
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+            <a asp-controller="Home" asp-action="Services">Services</a>
+            <a asp-controller="Home" asp-action="EmergencyBail">Emergency Bail</a>
+            <a asp-controller="Home" asp-action="Booking">Book</a>
+            <a asp-controller="Portal" asp-action="Dashboard">Client Portal</a>
+            <a asp-controller="Home" asp-action="Contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    <footer class="site-footer">
+        <div>
+            <strong>Chauke MB Attorneys Inc</strong>
+            <p>Secure legal support for criminal, family, civil, labour, immigration, RAF, estates, property, and eviction matters.</p>
+        </div>
+        <div class="footer-actions">
+            <a class="button secondary" asp-controller="Home" asp-action="Booking">Book Consultation</a>
+            <a class="button alert" asp-controller="Home" asp-action="EmergencyBail">Emergency Bail</a>
+        </div>
+    </footer>
+
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

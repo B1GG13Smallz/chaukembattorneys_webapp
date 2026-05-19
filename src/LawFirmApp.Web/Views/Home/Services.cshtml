@@ -1,0 +1,22 @@
+@model IReadOnlyList<ServicePage>
+@{
+    ViewData["Title"] = "Services";
+}
+
+<section class="page-title">
+    <p class="eyebrow">Services</p>
+    <h1>Legal support by matter type</h1>
+    <p>Each service page explains how the firm helps, the expected process, common documents, and the next action.</p>
+</section>
+
+<section class="section">
+    <div class="service-grid">
+        @foreach (var service in Model)
+        {
+            <a class="service-card" asp-action="Service" asp-route-id="@service.Slug">
+                <span>@service.Name</span>
+                <p>@service.Summary</p>
+            </a>
+        }
+    </div>
+</section>
