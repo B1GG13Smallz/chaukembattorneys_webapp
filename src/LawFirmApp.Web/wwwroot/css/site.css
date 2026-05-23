@@ -261,12 +261,63 @@ a {
     background: var(--brand-dark);
 }
 
+.visual-title {
+    min-height: 390px;
+    display: grid;
+    align-content: center;
+    background-color: var(--brand-dark);
+    background-repeat: no-repeat;
+    background-position: right clamp(20px, 7vw, 90px) center;
+    background-size: min(42vw, 520px) auto;
+}
+
+.visual-title.services-visual {
+    background-position: right clamp(20px, 7vw, 90px) top 28%;
+    background-image:
+        linear-gradient(90deg, rgba(7, 63, 69, .96) 0%, rgba(7, 63, 69, .54) 4%, rgba(7, 63, 69, .02) 10%, rgba(7, 63, 69, 0) 16%),
+        url("../images/watch.jpeg");
+}
+
+.visual-title.dashboard-visual {
+    background-position: right clamp(20px, 7vw, 90px) top 28%;
+    background-image:
+        linear-gradient(90deg, rgba(7, 63, 69, .96) 0%, rgba(7, 63, 69, .54) 4%, rgba(7, 63, 69, .02) 10%, rgba(7, 63, 69, 0) 16%),
+        url("../images/watch.jpeg");
+}
+
+.visual-title.bail-visual {
+    background-color: var(--urgent);
+    background-image:
+        linear-gradient(90deg, rgba(157, 28, 36, .96) 0%, rgba(157, 28, 36, .54) 4%, rgba(157, 28, 36, .02) 10%, rgba(157, 28, 36, 0) 16%),
+        url("../images/appeal.jpeg");
+}
+
+.visual-title.booking-visual {
+    background-position: right clamp(20px, 7vw, 90px) top 12%;
+    background-image:
+        linear-gradient(90deg, rgba(7, 63, 69, .96) 0%, rgba(7, 63, 69, .54) 4%, rgba(7, 63, 69, .02) 10%, rgba(7, 63, 69, 0) 16%),
+        url("../images/Squad.jpeg");
+}
+
+.visual-title.contact-visual {
+    background-image:
+        linear-gradient(90deg, rgba(7, 63, 69, .94) 0%, rgba(7, 63, 69, .52) 4%, rgba(7, 63, 69, .02) 10%, rgba(7, 63, 69, 0) 16%),
+        url("../images/Contact.jpeg");
+}
+
 .page-title.compact {
     padding-bottom: 48px;
 }
 
 .page-title.urgent {
-    background: var(--urgent);
+    background-color: var(--urgent);
+}
+
+.page-title.urgent.visual-title {
+    background-color: var(--urgent);
+    background-repeat: no-repeat;
+    background-position: right clamp(20px, 7vw, 90px) center;
+    background-size: min(42vw, 520px) auto;
 }
 
 .two-column {
@@ -274,6 +325,12 @@ a {
     grid-template-columns: minmax(0, 1.4fr) minmax(280px, .6fr);
     gap: 28px;
     align-items: start;
+}
+
+.contact-content {
+    background:
+        linear-gradient(rgba(255, 255, 255, .9), rgba(255, 255, 255, .9)),
+        url("../images/Contact.jpeg") center/cover no-repeat;
 }
 
 .panel,
@@ -408,6 +465,12 @@ a {
     background: var(--ink);
 }
 
+.footer-info {
+    display: grid;
+    grid-template-columns: minmax(260px, 620px) minmax(220px, 360px);
+    gap: 32px;
+}
+
 .site-footer p {
     margin: 8px 0 0;
     max-width: 620px;
@@ -432,8 +495,55 @@ a {
         align-items: flex-start;
     }
 
+    .footer-info {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
     .hero {
         min-height: 560px;
+    }
+
+    .visual-title,
+    .page-title.urgent.visual-title {
+        min-height: 520px;
+        justify-content: start;
+        background-position: center bottom 24px;
+        background-size: min(84vw, 360px) auto;
+    }
+
+    .visual-title.services-visual,
+    .visual-title.dashboard-visual,
+    .visual-title.booking-visual,
+    .visual-title.contact-visual {
+        background-image:
+            linear-gradient(180deg, rgba(7, 63, 69, .96) 0%, rgba(7, 63, 69, .54) 8%, rgba(7, 63, 69, .02) 14%, rgba(7, 63, 69, 0) 20%),
+            var(--mobile-visual);
+    }
+
+    .visual-title.bail-visual {
+        background-image:
+            linear-gradient(180deg, rgba(157, 28, 36, .96) 0%, rgba(157, 28, 36, .54) 8%, rgba(157, 28, 36, .02) 14%, rgba(157, 28, 36, 0) 20%),
+            url("../images/appeal.jpeg");
+    }
+
+    .visual-title.services-visual {
+        --mobile-visual: url("../images/watch.jpeg");
+        background-position: center bottom 54px;
+    }
+
+    .visual-title.dashboard-visual {
+        --mobile-visual: url("../images/watch.jpeg");
+        background-position: center bottom 54px;
+    }
+
+    .visual-title.booking-visual {
+        --mobile-visual: url("../images/Squad.jpeg");
+        background-position: center bottom 96px;
+    }
+
+    .visual-title.contact-visual {
+        --mobile-visual: url("../images/Contact.jpeg");
     }
 
     .intake-form {

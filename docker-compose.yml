@@ -1,0 +1,24 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_PROJECT: LawFirmApp.Web
+        APP_DLL: LawFirmApp.Web.dll
+    ports:
+      - "5241:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        APP_PROJECT: LawFirmApp.Api
+        APP_DLL: LawFirmApp.Api.dll
+    ports:
+      - "5141:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
