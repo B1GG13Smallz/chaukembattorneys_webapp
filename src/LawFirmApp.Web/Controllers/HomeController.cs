@@ -18,4 +18,5 @@ public sealed class HomeController(FirmContentService content) : Controller
     public IActionResult EmergencyBail() => View();
     public IActionResult Booking() => View(content.Services);
     public IActionResult Contact() => View();
+    public IActionResult Error() => View();
 }
